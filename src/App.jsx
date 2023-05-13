@@ -4,16 +4,10 @@ import "bootstrap/dist/js/bootstrap.js";
 import Layout from "./Layout";
 import { Route, Routes } from "react-router-dom";
 import QuestPage from "./page/QuestionPage";
-<<<<<<< HEAD
-import AnswersPage from "./page/AnswersPage";
-=======
 import { AuthPage } from "./Auth/Auth";
 import { AdminPage } from "./Admin/Admin";
 import Answer from "./page/AnswersPage";
-// import { useState } from "react";
->>>>>>> master
 function App() {
-
   return (
     <Layout>
       <Routes>

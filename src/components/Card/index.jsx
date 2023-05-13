@@ -1,42 +1,25 @@
-import { useState } from "react";
-import { Form, InputGroup, Button } from "react-bootstrap";
-import styles from "./style.module.css";
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/js/bootstrap.js";
 
-const Card = ({ children }) => {
-  const [answer, setAnswer] = useState("");
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(answer);
-  }
-
-  const handleChange = (event) => {
-    setAnswer(event.target.value);
-    
-  }
+const Card = ({ data }) => {
   return (
     <>
-      <div className={styles.card}>
-        <div className={styles.userData}>{children}</div>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, officia
-          itaque veniam debitis adipisci animi, facilis aliquid, rerum doloribus
-          accusamus velit! Deleniti laboriosam reprehenderit dolorem consectetur
-          nemo dicta aut aliquid?
-        </p>
-        <Form onSubmit={handleSubmit}>
-        <InputGroup className="mb-3">
-          <Form.Control
-            placeholder="ваш ответ"
-            aria-label="Ответ"
-            aria-describedby="basic-addon2"
-            onChange={handleChange}
-          />
-          <Button type="submit" variant="outline-secondary" id="button-addon2">
-            Button
-          </Button>
-        </InputGroup>
-        </Form>
+      <div className="card-group">
+        {data &&
+          data.map((item) => {
+            return (
+              <div key={item.id} className="card">
+                <div className="card-body">
+                  <h5 className="card-title">{item.name}</h5>
+                  <p className="card-text">Вопросы: {item.question}</p>
+                  <p className="card-text">Ответы: {item.answer}</p>
+                </div>
+                <div className="card-footer">
+                  <small className="text-body-secondary">{item.date}</small>
+                </div>
+              </div>
+            );
+          })}
       </div>
     </>
   );
