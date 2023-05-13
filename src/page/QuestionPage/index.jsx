@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Card from "../../components/Card";
 import { getData } from "../../api";
+import styles from "./style.module.css";
 
 const MainPage = () => {
   const [items, setItems] = useState();
@@ -11,10 +12,12 @@ const MainPage = () => {
     });
   }, []);
   return (
-    <div className="">
-      <Card data={items} />
+    <div className={styles.questionBlock}>
+      <div className={styles.cards}>
+        <Card data={items} />
+      </div>
     </div>
   );
 };
 
-export default MainPage;
+export default QuestPage;
