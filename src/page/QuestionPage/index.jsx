@@ -1,13 +1,20 @@
+import { useEffect, useState } from "react";
 import Card from "../../components/Card";
-import styles from "./style.module.css"
-const QuestPage = () => {
+import { getData } from "../../api";
+import styles from "./style.module.css";
 
+const MainPage = () => {
+  const [items, setItems] = useState();
+  useEffect(() => {
+    getData().then((rew) => {
+      setItems(rew.data.ItemData);
+      console.log(rew.data.ItemData);
+    });
+  }, []);
   return (
     <div className={styles.questionBlock}>
       <div className={styles.cards}>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
+        <Card data={items} />
       </div>
     </div>
   );
