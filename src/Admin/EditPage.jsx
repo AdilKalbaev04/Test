@@ -11,7 +11,6 @@ export const EditPage = ({ productInfo, data, index }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(index);
 
     let products = [...data];
     products.splice(index, 1, item);
@@ -22,9 +21,8 @@ export const EditPage = ({ productInfo, data, index }) => {
     <div key={productInfo?.id}>
       <AdminEditPageWrapper>
         <form onSubmit={handleSubmit}>
-          <span>{productInfo?.question}</span>
           <h3>Name : {productInfo?.name}</h3>
-          <label htmlFor="title">Title</label>
+          <label htmlFor="title">Question</label>
           <input
             type="text"
             name="question"
@@ -32,7 +30,7 @@ export const EditPage = ({ productInfo, data, index }) => {
             onChange={(e) => setItem({ ...item, question: e.target.value })}
           />
 
-          <label htmlFor="price">Price</label>
+          <label htmlFor="price">Answer</label>
           <input
             type="text"
             name="answer"

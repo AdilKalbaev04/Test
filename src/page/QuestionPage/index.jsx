@@ -12,7 +12,7 @@ const MainPage = () => {
   }, []);
   return (
     <div className="">
-      <Card data={items} />
+      <Card  data={items} />
     </div>
   );
 };

@@ -12,7 +12,6 @@ const Card = ({ data }) => {
                 <div className="card-body">
                   <h5 className="card-title">{item.name}</h5>
                   <p className="card-text">Вопросы: {item.question}</p>
-                  <p className="card-text">Ответы: {item.answer}</p>
                 </div>
                 <div className="card-footer">
                   <small className="text-body-secondary">{item.date}</small>
