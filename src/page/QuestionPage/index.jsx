@@ -3,7 +3,7 @@ import Card from "../../components/Card";
 import { getData } from "../../api";
 import styles from "./style.module.css";
 
-const MainPage = () => {
+const QuestPage = () => {
   const [items, setItems] = useState();
   useEffect(() => {
     getData().then((rew) => {
