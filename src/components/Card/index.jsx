@@ -1,54 +1,41 @@
-import "bootstrap/dist/css/bootstrap.css";
-import "bootstrap/dist/js/bootstrap.js";
+import { useState } from "react";
+import { Form, InputGroup, Button } from "react-bootstrap";
+import styles from "./style.module.css";
 
-const Card = () => {
+const Card = ({ children }) => {
+  const [answer, setAnswer] = useState("");
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(answer)
+  }
+
+  const handleChange = (event) => {
+    setAnswer(event.target.value);
+  }
   return (
     <>
-      <div className="card-group">
-        <div className="card">
-          <div className="card-body">
-            <h5 className="card-title">Card title</h5>
-            <p className="card-text">
-              This is a wider card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit
-              longer.
-            </p>
-          </div>
-          <div className="card-footer">
-            <small className="text-body-secondary">
-              Last updated 3 mins ago
-            </small>
-          </div>
-        </div>
-        <div className="card">
-          <div className="card-body">
-            <h5 className="card-title">Card title</h5>
-            <p className="card-text">
-              This card has supporting text below as a natural lead-in to
-              additional content.
-            </p>
-          </div>
-          <div className="card-footer">
-            <small className="text-body-secondary">
-              Last updated 3 mins ago
-            </small>
-          </div>
-        </div>
-        <div className="card">
-          <div className="card-body">
-            <h5 className="card-title">Card title</h5>
-            <p className="card-text">
-              This is a wider card with supporting text below as a natural
-              lead-in to additional content. This card has even longer content
-              than the first to show that equal height action.
-            </p>
-          </div>
-          <div className="card-footer">
-            <small className="text-body-secondary">
-              Last updated 3 mins ago
-            </small>
-          </div>
-        </div>
+      <div className={styles.card}>
+        <div className={styles.userData}>{children}</div>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, officia
+          itaque veniam debitis adipisci animi, facilis aliquid, rerum doloribus
+          accusamus velit! Deleniti laboriosam reprehenderit dolorem consectetur
+          nemo dicta aut aliquid?
+        </p>
+        <Form onSubmit={handleSubmit}>
+        <InputGroup className="mb-3">
+          <Form.Control
+            placeholder="ваш ответ"
+            aria-label="Ответ"
+            aria-describedby="basic-addon2"
+            onChange={handleChange}
+          />
+          <Button type="submit" variant="outline-secondary" id="button-addon2">
+            Button
+          </Button>
+        </InputGroup>
+        </Form>
       </div>
     </>
   );

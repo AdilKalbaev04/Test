@@ -1,0 +1,19 @@
+.card {
+  background: #ffcc00;
+  border-radius: 40px;
+  padding: 20px;
+  max-width: 400px;
+  max-height: 400px;
+}
+.userData{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+}
+.input{
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 0px 50px;
+}

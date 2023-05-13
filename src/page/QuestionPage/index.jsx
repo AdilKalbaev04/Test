@@ -1,12 +1,16 @@
 import Card from "../../components/Card";
-
-const MainPage = () => {
+import styles from "./style.module.css"
+const QuestPage = () => {
 
   return (
-    <div className="">
-      <Card />
+    <div className={styles.questionBlock}>
+      <div className={styles.cards}>
+        <Card></Card>
+        <Card></Card>
+        <Card></Card>
+      </div>
     </div>
   );
 };
 
-export default MainPage;
+export default QuestPage;
