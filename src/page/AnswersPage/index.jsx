@@ -1,9 +1,5 @@
+const Answer = () => {
+  return <div>Answer</div>;
+};
 
-
-const AnswersPage = () => {
-  return (
-    <div>AnswersPage</div>
-  )
-}
-
-export default AnswersPage
+export default Answer;
