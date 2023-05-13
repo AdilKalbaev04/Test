@@ -1,16 +1,22 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.js";
-import Card from "./components/Card";
 import Layout from "./Layout";
+import { Route, Routes } from "react-router-dom";
+import QuestPage from "./page/QuestionPage";
+import AnswersPage from "./page/AnswersPage";
+// import { useState } from "react";
 function App() {
+  // const [isAuth, setIsAuth] = useState()
+
   return (
-    <>
-      <Layout>
-        <h1>salam</h1>
-        <Card />
-      </Layout>
-    </>
+    <Layout>
+      <Routes>
+        <Route path="/" element={<QuestPage />} />
+        <Route path="/answers" element={<AnswersPage />} />
+        <Route path="*" element={<h1>404 Не найдена страница</h1>} />
+      </Routes>
+    </Layout>
   );
 }
 
