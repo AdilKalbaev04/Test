@@ -7,11 +7,12 @@ const Card = ({ children }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(answer)
+    console.log(answer);
   }
 
   const handleChange = (event) => {
     setAnswer(event.target.value);
+    
   }
   return (
     <>
