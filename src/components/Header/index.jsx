@@ -5,12 +5,9 @@ export const Header = () => {
   return (
     <header>
       <div className={styles.topMenu}>
-        <a className={styles.topMenuLink} href="/">
-          Вопросы
-        </a>
-        <a className={styles.topMenuLink} href="/answer">
-          Ответы
-        </a>
+        <NavLink className={styles.topMenuLink} to="/">
+          Вопросы и ответы
+        </NavLink>
       </div>
 
       <div className={styles.blockTopAuth}>

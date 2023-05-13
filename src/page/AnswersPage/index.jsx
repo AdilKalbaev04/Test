@@ -30,7 +30,6 @@ const AnswersPage = () => {
             <h6>Time</h6>
           </div>
         </Card>
-        
       </div>
     </div>
   );

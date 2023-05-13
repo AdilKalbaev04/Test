@@ -13,7 +13,7 @@ const QuestPage = () => {
   }, []);
   return (
     <div className={styles.questionBlock}>
-      <div className={styles.cards}>
+      <div>
         <Card data={items} />
       </div>
     </div>
