@@ -5,9 +5,7 @@ import Layout from "./Layout";
 import { Route, Routes } from "react-router-dom";
 import QuestPage from "./page/QuestionPage";
 import AnswersPage from "./page/AnswersPage";
-// import { useState } from "react";
 function App() {
-  // const [isAuth, setIsAuth] = useState()
 
   return (
     <Layout>
